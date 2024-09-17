@@ -7,10 +7,9 @@ public class EratosthenesPrimeSieve
   {
     this.MAX = MAX;
   }
-
+  boolean[] primes = new boolean[MAX];
   public void PrimeSieve(String[] args)
   {
-    boolean[] primes = new boolean[MAX];
     for (int i=0; i<primes.length; i++)
     {
       primes[i] = true;
@@ -23,6 +22,18 @@ public class EratosthenesPrimeSieve
         }
       }
     }
-
+  }
+//counts and prints the total of prime numbers
+  public void PrimeCounter()
+  {
+    int count = 0;
+    for (int i = 2; i < MAX; i++)
+    {
+      if (primes[i - 1]) {
+        System.out.println(i);
+        count++;
+      }
+      System.out.printf("There were %d primes up to %d", count, MAX);
+    }
   }
 }
